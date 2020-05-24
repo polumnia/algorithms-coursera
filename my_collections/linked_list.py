@@ -8,6 +8,12 @@ class Node(Generic[T]):
     item: T
     next: Optional['Node[T]']
 
+@dataclass
+class DLLNode(Generic[T]):
+    item: T
+    next: Optional['Node[T]']
+    previous: Optional['Node[T]']
+
 class LinkedListIterator:
     def __init__(self, first: Node[T]):
         self.current = first
