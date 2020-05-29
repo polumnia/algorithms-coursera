@@ -1,7 +1,7 @@
 from typing import Optional, TypeVar, Generic
 from dataclasses import dataclass
 
-from my_collections.linked_list import LinkedListIterator, Node, T
+from algorithms.linked_list import LinkedListIterator, Node, T
 
 class Queue:
     def __init__(self):
