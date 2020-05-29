@@ -8,8 +8,7 @@ clean:  ## delete files defined in .gitignore
 	git clean -Xdf
 
 pylint:
-	poetry run pylint slice_sem_plaintext_extractor
-
+	poetry run pylint algorithms
 flake8:
 	poetry run flake8
 

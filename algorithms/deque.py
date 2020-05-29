@@ -1,6 +1,7 @@
 from typing import Optional
 
-from algorithms.linked_list import LinkedListIterator, Node, T, DLLNode
+from my_collections.linked_list import LinkedListIterator, Node, T, DLLNode
+
 
 class Deque:
     def __init__(self):
@@ -101,13 +102,3 @@ class DLLDeque:
 
     def __iter__(self):
         return LinkedListIterator(self.first)
-
-
-if __name__ == "__main__":
-    l = ['to', 'be', 'or', 'not', 'to', 'be']
-    q = Deque()
-    for elem in l:
-        q.add_last(elem)
-
-    for q_elem in q:
-        print(q_elem)
