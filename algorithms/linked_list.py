@@ -3,16 +3,19 @@ from dataclasses import dataclass
 
 T = TypeVar("T")
 
+
 @dataclass
 class Node(Generic[T]):
     item: T
     next: Optional['Node[T]']
+
 
 @dataclass
 class DLLNode(Generic[T]):
     item: T
     next: Optional['DLLNode[T]']
     previous: Optional['DLLNode[T]']
+
 
 class LinkedListIterator:
     def __init__(self, first: Node[T]):
