@@ -1,5 +1,6 @@
 from algorithms.exceptions import Empty
 
+
 class ArrayStack:
     """LIFO Stack implementation using a Python list as underlying storage"""
     def __init__(self):

@@ -35,6 +35,7 @@ class Queue:
     def __iter__(self) -> LinkedListIterator:
         return LinkedListIterator(self.first)
 
+
 class ArrayQueue:
     """FIFO queue implementation using a Python list as underlying storage."""
     DEFAULT_CAPACITY = 10
@@ -80,7 +81,7 @@ class ArrayQueue:
         self._front = (self._front + 1) % len(self._data)
         self._size -= 1
         if 0 < self._size < len(self._data) // 4:
-            self._resize(len(self._data // 2)
+            self._resize(len(self._data // 2))
         return first_item
 
     def _resize(self, new_capacity):

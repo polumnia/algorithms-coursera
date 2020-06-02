@@ -7,6 +7,7 @@ def selection_sort(input_array):
                 min_id = j
         swap(input_array, i, min_id)
 
+
 def insertin_sort(input_array):
     array_size = len(input_array)
     for i in range(array_size):
@@ -15,6 +16,7 @@ def insertin_sort(input_array):
                 swap(input_array, j, j-1)
             else:
                 break
+
 
 def shellsort(input_array):
     array_size = len(input_array)
@@ -29,6 +31,7 @@ def shellsort(input_array):
                 else:
                     break
         h = h // 3
+
 
 def swap(inp_array, ind1, ind2):
     inp_array[ind1], inp_array[ind2] = inp_array[ind2], inp_array[ind1]
