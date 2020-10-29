@@ -8,7 +8,17 @@ def selection_sort(input_array):
         swap(input_array, i, min_id)
 
 
-def insertin_sort(input_array):
+def new_insertion_sort(input_array):
+    for j in range(1, len(input_array)):
+        key = input_array[j]
+        i = j - 1
+        while i >= 0 and input_array[i] > key:
+            input_array[i + 1] = input_array[i]
+            i = i - 1
+        input_array[i + 1] = key
+
+
+def insertion_sort(input_array):
     array_size = len(input_array)
     for i in range(array_size):
         for j in range(i, 0, -1):
@@ -16,16 +26,6 @@ def insertin_sort(input_array):
                 swap(input_array, j, j-1)
             else:
                 break
-
-def insertion_sort_reverse(input_array):
-    array_size = len(input_array)
-    for i in range(array_size):
-        for j in range(i, 0, -1):
-            if input_array[j] < input_array[j-1]:
-                swap(input_array, j, j-1)
-            else:
-                break
-
 
 def shellsort(input_array):
     array_size = len(input_array)
@@ -65,10 +65,14 @@ def merge(input_array, aux_array, lo, mid, hi):
             j += 1
     return input_array
 
-def mergesort(input_array, aux_array, lo, hi):
+def _mergesort(input_array, aux_array, lo, hi):
     if hi <= lo:
         return
     mid = lo + (hi - lo) // 2
-    mergesort(input_array, aux_array, lo, mid)
-    mergesort(input_array, aux_array, mid + 1, hi)
+    _mergesort(input_array, aux_array, lo, mid)
+    _mergesort(input_array, aux_array, mid + 1, hi)
     merge(input_array, aux_array, lo, mid, hi)
+
+def mergesort(input_array):
+    array_size = len(input_array)
+    _mergesort(input_array, [None] * array_size, 0, array_size - 1)

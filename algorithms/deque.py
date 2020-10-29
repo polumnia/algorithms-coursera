@@ -1,6 +1,6 @@
 from typing import Optional
 
-from my_collections.linked_list import LinkedListIterator, Node, T, DLLNode
+from algorithms.linked_list import LinkedListIterator, Node, T, DLLNode
 
 
 class Deque:

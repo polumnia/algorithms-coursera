@@ -3,12 +3,19 @@ from random import shuffle
 def swap(inp_array, ind1, ind2):
     inp_array[ind1], inp_array[ind2] = inp_array[ind2], inp_array[ind1]
 
-def quicksort(input_array, lo, hi):
+
+def quicksort(input_array):
+    shuffle(input_array)
+    _quicksort(input_array, 0, len(input_array) - 1)
+
+
+def _quicksort(input_array, lo, hi):
     if lo >= hi:
         return
     partition_index = partition(input_array, lo, hi)
-    quicksort(input_array, lo, partition_index - 1)
-    quicksort(input_array, partition_index + 1, hi)
+    _quicksort(input_array, lo, partition_index - 1)
+    _quicksort(input_array, partition_index + 1, hi)
+
 
 def partition(input_array, lo, hi):
     i = lo + 1
@@ -29,8 +36,8 @@ def partition(input_array, lo, hi):
     swap(input_array, lo, j)
     return j
 
+
 if __name__ == '__main__':
     inp_array = list('KRATELEPUIMQCXOS')
-    shuffle(inp_array)
-    quicksort(inp_array, 0, len(inp_array) - 1)
+    quicksort(inp_array)
     print(inp_array)
